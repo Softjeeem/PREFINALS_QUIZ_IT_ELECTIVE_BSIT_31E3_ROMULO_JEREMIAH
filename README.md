@@ -8,7 +8,7 @@ Project detail pages — one page per project with a thumbnail, description, and
 Comment section — every project detail page has a comment list and a form to add new comments (stored in memory for the life of the running app).
 Hardcoded login — the whole site is protected by cookie-based authentication using a single hardcoded account (see below).
 
-##Login Credentials
+Login Credentials
 
 |Field|Value|
 |-|-|
