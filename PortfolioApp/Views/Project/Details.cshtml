@@ -1,0 +1,56 @@
+@model Project
+@{
+    ViewData["Title"] = Model.Name;
+    var comments = ViewBag.Comments as List<Comment> ?? new List<Comment>();
+    var newComment = ViewBag.NewComment as CommentInputModel ?? new CommentInputModel { ProjectId = Model.Id };
+}
+
+<a asp-controller="Home" asp-action="Index" class="back-link">&larr; Back to Table of Contents</a>
+
+<article class="project-detail">
+    <img src="@Model.ThumbnailUrl" alt="@Model.Name thumbnail" class="detail-thumb" />
+
+    <div class="detail-body">
+        <span class="badge">@Model.Category</span>
+        <h1>@Model.Name</h1>
+        <p class="description">@Model.Description</p>
+        <a href="@Model.GitHubUrl" target="_blank" rel="noopener" class="btn">View on GitHub &rarr;</a>
+    </div>
+</article>
+
+<section class="comments">
+    <h2>Comments (@comments.Count)</h2>
+
+    @if (!comments.Any())
+    {
+        <p class="muted">No comments yet. Be the first to leave one!</p>
+    }
+    else
+    {
+        <ul class="comment-list">
+            @foreach (var comment in comments)
+            {
+                <li class="comment">
+                    <div class="comment-meta">
+                        <strong>@comment.Author</strong>
+                        <span class="muted">@comment.PostedAt.ToString("MMM d, yyyy h:mm tt")</span>
+                    </div>
+                    <p>@comment.Message</p>
+                </li>
+            }
+        </ul>
+    }
+
+    <h3>Leave a comment</h3>
+    <form asp-controller="Project" asp-action="AddComment" method="post" class="comment-form">
+        <input type="hidden" name="ProjectId" value="@Model.Id" />
+
+        <label for="Author">Name</label>
+        <input type="text" id="Author" name="Author" maxlength="60" required placeholder="Your name" />
+
+        <label for="Message">Comment</label>
+        <textarea id="Message" name="Message" maxlength="500" required placeholder="Share your thoughts about this project..."></textarea>
+
+        <button type="submit" class="btn">Post comment</button>
+    </form>
+</section>

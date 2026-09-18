@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Jeremiah Romulo | Portfolio</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" asp-controller="Home" asp-action="Index">Jeremiah Romulo &mdash; Portfolio</a>
+            <nav>
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <span class="welcome">Signed in as @User.Identity.Name</span>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="inline-form">
+                        <button type="submit" class="link-button">Log out</button>
+                    </form>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login">Log in</a>
+                }
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year Jeremiah Romulo &mdash; BSIT 31E3 / IT Elective 2 Portfolio
+        </div>
+    </footer>
+</body>
+</html>

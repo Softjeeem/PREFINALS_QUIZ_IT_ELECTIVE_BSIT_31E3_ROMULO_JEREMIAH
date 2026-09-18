@@ -1,0 +1,49 @@
+@model IEnumerable<IGrouping<string, Project>>
+@{
+    ViewData["Title"] = "Table of Contents";
+}
+
+<section class="hero">
+    <h1>My Project Portfolio</h1>
+    <p>A collection of MVC and application-development projects completed for BSIT 31E3 / IT Elective 2.</p>
+</section>
+
+<section class="toc">
+    <h2>Table of Contents</h2>
+    <ul class="toc-list">
+        @foreach (var group in Model)
+        {
+            <li>
+                <a href="#category-@group.Key">@group.Key</a>
+                <span class="count">(@group.Count())</span>
+            </li>
+        }
+    </ul>
+</section>
+
+@foreach (var group in Model)
+{
+    <section id="category-@group.Key" class="category-section">
+        <h2>@group.Key Projects</h2>
+        <div class="card-grid">
+            @foreach (var project in group)
+            {
+                <div class="card">
+                    <a asp-controller="Project" asp-action="Details" asp-route-id="@project.Id">
+                        <img src="@project.ThumbnailUrl" alt="@project.Name thumbnail" class="thumb" />
+                    </a>
+                    <div class="card-body">
+                        <h3>
+                            <a asp-controller="Project" asp-action="Details" asp-route-id="@project.Id">@project.Name</a>
+                        </h3>
+                        <p>@project.Description</p>
+                        <div class="card-links">
+                            <a asp-controller="Project" asp-action="Details" asp-route-id="@project.Id" class="btn">View details</a>
+                            <a href="@project.GitHubUrl" target="_blank" rel="noopener" class="btn btn-secondary">GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+}

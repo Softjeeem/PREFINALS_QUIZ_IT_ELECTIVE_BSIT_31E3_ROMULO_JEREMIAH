@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#1f2333"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g5)"/>
+  <text x="50%" y="48%" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="white" text-anchor="middle">Prelim Quiz 1</text>
+  <text x="50%" y="60%" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">GitHub Project Thumbnail</text>
+</svg>

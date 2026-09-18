@@ -1,0 +1,15 @@
+wwwroot\css\site.css
+wwwroot\images\project1.svg
+wwwroot\images\project10.svg
+wwwroot\images\project11.svg
+wwwroot\images\project12.svg
+wwwroot\images\project13.svg
+wwwroot\images\project14.svg
+wwwroot\images\project2.svg
+wwwroot\images\project3.svg
+wwwroot\images\project4.svg
+wwwroot\images\project5.svg
+wwwroot\images\project6.svg
+wwwroot\images\project7.svg
+wwwroot\images\project8.svg
+wwwroot\images\project9.svg
