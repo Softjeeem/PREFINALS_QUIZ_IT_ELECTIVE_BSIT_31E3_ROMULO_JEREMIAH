@@ -26,3 +26,10 @@ categories. Each entry includes a name, short description, GitHub link, and a
 generated thumbnail image. Edit the `Description` and `Category` fields in
 `ProjectData.cs` to fine-tune the write-up for each repository.
 
+Comments and login sessions are stored in memory only — they reset
+whenever the application restarts. This keeps the demo simple and dependency-free
+(no database setup required).
+
+Thumbnails are generated SVG placeholders (`wwwroot/images/project*.svg`).
+Swap them out for real screenshots of each project whenever you have them.
+
