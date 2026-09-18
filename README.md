@@ -2,12 +2,11 @@
 
 
 Features
----
 
-* **Table of Contents** (Home page) — all projects grouped by category (Prelim, Midterm, Prefinal), with anchor links.
-* **Project detail pages** — one page per project with a thumbnail, description, and a link to the GitHub repository.
-* **Comment section** — every project detail page has a comment list and a form to add new comments (stored in memory for the life of the running app).
-* **Hardcoded login** — the whole site is protected by cookie-based authentication using a single hardcoded account (see below).
+Table of Contents (Home page) — all projects grouped by category (Prelim, Midterm, Prefinal), with anchor links.
+Project detail pages — one page per project with a thumbnail, description, and a link to the GitHub repository.
+Comment section — every project detail page has a comment list and a form to add new comments (stored in memory for the life of the running app).
+Hardcoded login — the whole site is protected by cookie-based authentication using a single hardcoded account (see below).
 
 ##Login Credentials
 
@@ -17,8 +16,7 @@ Features
 |Password|`Portfolio@2026`|
 
 
-
-## Projects Included
+Projects Included
 
 All 14 projects from the submitted GitHub repository list are cataloged in
 `Data/ProjectData.cs`, grouped into **Prelim**, **Midterm**, and **Prefinal**
